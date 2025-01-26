@@ -3,113 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To-Do List</title>
+  <title>Portfolio - Amit Khetan</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 20px;
-      background-color: #f5f5f5;
-    }
-    #todo-container {
-      max-width: 400px;
-      margin: 0 auto;
-    }
-    #todo-input {
-      width: calc(100% - 50px);
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      padding: 10px 15px;
-      margin-left: 5px;
-      border: none;
-      background-color: #007BFF;
-      color: white;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-    ul {
-      list-style: none;
+      margin: 0;
       padding: 0;
+      line-height: 1.6;
+      background-color: #f4f4f9;
+      color: #333;
     }
-    li {
-      background-color: white;
-      padding: 10px;
-      margin: 5px 0;
-      border: 1px solid #ddd;
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    nav {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-radius: 4px;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0;
     }
-    li button {
-      background-color: #dc3545;
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
     }
-    li button:hover {
-      background-color: #a71d2a;
+    nav a:hover {
+      color: #007acc;
+    }
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .project {
+      margin: 1rem 0;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #333;
+      color: #fff;
+      position: relative;
+      bottom: 0;
+      width: 100%;
     }
   </style>
 </head>
 <body>
-  <div id="todo-container">
-    <h1>To-Do List</h1>
-    <div>
-      <input type="text" id="todo-input" placeholder="Enter a new task..." />
-      <button id="add-button">Add</button>
-    </div>
-    <ul id="todo-list"></ul>
+
+<header>
+  <h1>Amit Khetan</h1>
+  <p>Web Developer | Software Engineer | Tech Enthusiast | Solutions Architect</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    Hi! I'm a passionate developer with experience in building web applications,
+    solving complex problems, and delivering user-friendly software solutions.
+  </p>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="project">
+    <h3>Project 1: Awesome App</h3>
+    <p>Description of the project and its key features.</p>
+    <a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
   </div>
+  <div class="project">
+    <h3>Project 2: Cool Website</h3>
+    <p>Description of the project and its key features.</p>
+    <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
+  </div>
+</section>
 
-  <script>
-    // Select the input, button, and the list container
-    const input = document.getElementById("todo-input");
-    const addButton = document.getElementById("add-button");
-    const todoList = document.getElementById("todo-list");
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:yourname@example.com">amitkumar.khetan@gmail.com</a></p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/amit-k-84416149/" target="_blank">linkedin.com/in/amitkhetan</a></p>
+</section>
 
-    // Function to add a new task
-    function addTask() {
-      const taskText = input.value.trim(); // Trim whitespace
+<footer>
+  <p>&copy; 2025 Your Name. All rights reserved.</p>
+</footer>
 
-      if (taskText === "") {
-        alert("Task cannot be empty!");
-        console.log("empty");
-        return;
-      }
-
-      // Create a new list item
-      const li = document.createElement("li");
-      li.textContent = taskText;
-
-      // Add a delete button to the task
-      const deleteButton = document.createElement("button");
-      deleteButton.textContent = "Delete Now";
-      deleteButton.onclick = function () {
-        console.log("Tetsing");
-        todoList.removeChild(li);
-      };
-
-      // Append the button and the task to the list item
-      li.appendChild(deleteButton);
-      todoList.appendChild(li);
-
-      // Clear the input field
-      input.value = "";
-    }
-
-    // Add an event listener to the button
-    addButton.addEventListener("click", addTask);
-
-    // Allow adding tasks with the "Enter" key
-    input.addEventListener("keydown", function (event) {
-      if (event.key === "Enter") {
-        console.log("added");
-        addTask();
-      }
-    });
-  </script>
 </body>
 </html>
